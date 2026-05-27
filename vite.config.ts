@@ -1,35 +1,44 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import { resolve } from 'path'
+import { defineConfig } from "vite";
+import tailwindcss from "@tailwindcss/vite";
+import react from "@vitejs/plugin-react";
+import path from "path";
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    tailwindcss(),
+  ],
   resolve: {
     alias: {
-      '@components': resolve(__dirname, 'src/components'),
-      '@lib': resolve(__dirname, 'src/lib'),
+      "@components": path.resolve(__dirname, "./src/components"),
+      "@lib": path.resolve(__dirname, "./src/lib"),
+      "@hooks": path.resolve(__dirname, "./src/hooks"),
+      "@providers": path.resolve(__dirname, "./src/providers"),
     },
+  },
+  server: {
+    port: 3000,
   },
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/lib/index.ts'),
-      name: 'ComponentLib',
-      formats: ['es', 'cjs'],
+      entry: path.resolve(__dirname, "src/lib/index.ts"),
+      name: "ComponentLib",
+      formats: ["es", "cjs"],
       fileName: (format) => `index.${format}.js`,
     },
     rollupOptions: {
-      external: ['react', 'react-dom'],
+      external: ["react", "react-dom"],
       output: {
         globals: {
-          react: 'React',
-          'react-dom': 'ReactDOM',
+          react: "React",
+          "react-dom": "ReactDOM",
         },
       },
     },
   },
   test: {
     globals: true,
-    environment: 'jsdom',
-    setupFiles: './src/test/setup.ts',
+    environment: "jsdom",
+    setupFiles: "./src/test/setup.ts",
   },
-})
+});

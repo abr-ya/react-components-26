@@ -1,14 +1,15 @@
 import { defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react'
-import dts from 'vite-plugin-dts'
 import { resolve } from 'path'
 
 export default defineConfig({
-  plugins: [react(), dts()],
+  plugins: [react()],
   resolve: {
     alias: {
       '@components': resolve(__dirname, 'src/components'),
+      '@hooks': resolve(__dirname, 'src/hooks'),
       '@lib': resolve(__dirname, 'src/lib'),
+      '@providers': resolve(__dirname, 'src/providers'),
     },
   },
   test: {

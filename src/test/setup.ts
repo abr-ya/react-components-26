@@ -1,7 +1,7 @@
-import { expect, afterEach } from 'vitest'
+import { afterEach } from 'vitest'
 import { cleanup } from '@testing-library/react'
 
-// Очистка после каждого теста
+// Clean up the React tree after each test.
 afterEach(() => {
   cleanup()
 })
