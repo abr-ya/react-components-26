@@ -15,14 +15,37 @@ npm run dev
 npm run build
 ```
 
-The library entry point is `src/lib/index.ts`. Vite builds ESM and CJS bundles into `dist/`.
+The library entry point is `src/lib/index.ts`. Vite builds ESM and CJS bundles into `dist/`, and TypeScript emits declarations into `dist/types/`.
+
+## Build a Local Package File
+
+Build the library and create a local npm tarball:
+
+```bash
+npm run build
+npm pack
+```
+
+This creates a file like:
+
+```text
+component-lib-26-0.0.0.tgz
+```
+
+Install that file in another project:
+
+```bash
+npm install ../react-components-26/component-lib-26-0.0.0.tgz
+```
+
+Use the actual relative or absolute path to the generated `.tgz` file from your target project.
 
 ## Usage
 
 Import the library styles once in your app:
 
 ```tsx
-import 'component-lib-26/dist/style.css'
+import 'component-lib-26/style.css'
 ```
 
 Then import components from the package:

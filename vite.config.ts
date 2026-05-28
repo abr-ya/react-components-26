@@ -21,10 +21,14 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: path.resolve(__dirname, "src/lib/index.ts"),
+      entry: {
+        index: path.resolve(__dirname, "src/lib/index.ts"),
+        style: path.resolve(__dirname, "src/lib/style.ts"),
+      },
       name: "ComponentLib",
       formats: ["es", "cjs"],
-      fileName: (format) => `index.${format}.js`,
+      fileName: (format, entryName) => `${entryName}.${format}.js`,
+      cssFileName: "style",
     },
     rollupOptions: {
       external: ["react", "react-dom"],
