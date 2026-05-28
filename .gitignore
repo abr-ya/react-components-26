@@ -12,3 +12,4 @@ coverage
 # VitePress generated files
 docs/.vitepress/cache
 docs/.vitepress/dist
+docs/.vitepress/.temp
