@@ -108,6 +108,6 @@ src/
 
 ## Documentation
 
-- [Components](/components/intro)
+- [Components](./components/intro.md)
 - [Initial Setup](./01-init.md)
 - [Update and Theme Changes](./02-update-and-theme.md)
