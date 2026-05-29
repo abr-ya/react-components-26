@@ -6,6 +6,7 @@ This section documents the reusable components available in Component Library 26
 
 - **Button** — a composable button with style variants and size variants
 - **Card** — a content container with header, content, footer, title, and description parts
+- **PeakHoursRangeSelector** — an interactive selector for peak-hour ranges across a 24-hour day
 - **ThemeToggle** — a theme switcher for `dark`, `light`, and `system` modes
 
 ## Usage

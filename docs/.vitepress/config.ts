@@ -18,6 +18,7 @@ export default {
           { text: 'Введение', link: 'intro' },
           { text: 'Button (Кнопка)', link: 'button' },
           { text: 'Card (Карточка)', link: 'card' },
+          { text: 'PeakHoursRangeSelector', link: 'peak-hours-range-selector' },
           { text: 'ThemeToggle (Переключатель темы)', link: 'theme-toggle' },
         ],
       },
